@@ -47,7 +47,7 @@ namespace Bookify.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Edit(int id)
+        public IActionResult GetById(int id)
         {
             var author = _context.Authors.Find(id);
 
@@ -65,7 +65,7 @@ namespace Bookify.API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var author = _context.Authors.Find(id);
+            var author =  _context.Authors.Find(id);
 
             if (author is null)
                 return NotFound();
